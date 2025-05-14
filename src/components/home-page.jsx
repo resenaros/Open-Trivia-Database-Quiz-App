@@ -1,5 +1,6 @@
 //importing UseState hook from react
 import { useState } from "react";
+import styles from "./home-page.module.css";
 
 // Home component to display the welcome message and form
 //receives onStart as a prop to start the quiz
@@ -40,14 +41,15 @@ const Home = ({ onStart }) => {
   return (
     <>
       {/* !Form to collect user data (name, category, difficulty)*/}
-      <form onSubmit={handleSubmit}>
+      <form className={styles.form} onSubmit={handleSubmit}>
         {/*Welcome message and instructions*/}
-        <h1>Welcome to the Quiz App!</h1>
-        <p>Fill out the form to get started.</p>
+        <h1 className={styles.heading}>Welcome to the Quiz App!</h1>
+        <p className={styles.text}>Fill out the form to get started.</p>
         {/* name input field */}
-        <label>
+        <label className={styles.lable}>
           First Name:
           <input
+            className={styles.input}
             type="text"
             name="name"
             value={formData.name}
@@ -55,9 +57,10 @@ const Home = ({ onStart }) => {
           />
         </label>
         {/* category dropdown  */}
-        <label>
+        <label classNamer={styles.lable}>
           Category:
           <select
+            className={styles.select}
             name="category"
             value={formData.category}
             onChange={handleChange}
@@ -78,9 +81,10 @@ const Home = ({ onStart }) => {
           </select>
         </label>
         {/* difficulty dropdown */}
-        <label>
+        <label className={styles.lable}>
           Difficulty:
           <select
+            className={styles.select}
             name="difficulty"
             value={formData.difficulty}
             onChange={handleChange}
@@ -93,9 +97,11 @@ const Home = ({ onStart }) => {
         </label>
         {/* error message */}
         {/*!if error is not an empty string, display the error message*/}
-        {error && <p style={{ color: "red" }}>{error}</p>}
+        {error && <p className={styles.error}>{error}</p>}
         {/*!submit button to start the quiz. disabled until answer is selected*/}
-        <button type="submit">Start Quiz</button>
+        <button type="submit" className={styles.button}>
+          Start Quiz
+        </button>
       </form>
     </>
   );
