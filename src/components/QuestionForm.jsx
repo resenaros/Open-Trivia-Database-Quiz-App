@@ -1,7 +1,7 @@
 //import of useEffect for fetching data
 //import of useState for managing state
 import { useEffect, useState } from "react";
-import styles from "./question-form.module.css";
+import styles from "./QuestionForm.module.css";
 
 //merge the correct answer and incorrect answers into a single array and shuffle them.
 const shuffleAnswers = (correct, incorrect) => {
@@ -9,13 +9,13 @@ const shuffleAnswers = (correct, incorrect) => {
   return [...incorrect, correct].sort(() => Math.random() - 0.5);
 };
 
-//declaration of the Question component with paramaters/props data and onSubmitAnswer.
+//declaration of the Question component with parameters/props data and onSubmitAnswer.
 const Question = ({ data, onSubmitAnswer }) => {
   //stores the question data, selected answer, error message, and API error message in state variables.
   const [questionData, setQuestionData] = useState(null);
   //stores the user's selected answer in state.
   const [selected, setSelected] = useState("");
-  //holds eror message if the user does not select an answer.
+  //holds error message if the user does not select an answer.
   const [error, setError] = useState("");
   //holds API error message if the fetch fails.
   const [apiError, setApiError] = useState("");

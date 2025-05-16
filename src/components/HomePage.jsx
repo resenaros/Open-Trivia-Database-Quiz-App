@@ -1,6 +1,6 @@
 //importing UseState hook from react
 import { useState } from "react";
-import styles from "./home-page.module.css";
+import styles from "./HomePage.module.css";
 
 // Home component to display the welcome message and form
 //receives onStart as a prop to start the quiz
@@ -46,7 +46,7 @@ const Home = ({ onStart }) => {
         <h1 className={styles.heading}>Welcome to the Quiz App!</h1>
         <p className={styles.text}>Fill out the form to get started.</p>
         {/* name input field */}
-        <label className={styles.lable}>
+        <label className={styles.label}>
           First Name:
           <input
             className={styles.input}
@@ -57,7 +57,7 @@ const Home = ({ onStart }) => {
           />
         </label>
         {/* category dropdown  */}
-        <label classNamer={styles.lable}>
+        <label classNamer={styles.label}>
           Category:
           <select
             className={styles.select}
@@ -81,7 +81,7 @@ const Home = ({ onStart }) => {
           </select>
         </label>
         {/* difficulty dropdown */}
-        <label className={styles.lable}>
+        <label className={styles.label}>
           Difficulty:
           <select
             className={styles.select}

@@ -1,6 +1,6 @@
-import styles from "./results.module.css";
+import styles from "./Results.module.css";
 //props received from the parent component. (name, selected, correct, onRestart)
-const Result = ({ name, selected, correct, onRestart }) => {
+const Results = ({ name, selected, correct, onRestart }) => {
   //compare the selected answer with the correct answer, returns true or false.0
   const isCorrect = selected === correct;
 
@@ -28,4 +28,4 @@ const Result = ({ name, selected, correct, onRestart }) => {
   );
 };
 
-export default Result;
+export default Results;
